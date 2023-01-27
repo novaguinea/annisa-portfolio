@@ -1,3 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap');
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -40,39 +46,6 @@
   --card-border-rgb: 131, 134, 135;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -98,10 +71,95 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  font-size: 12pt;
+  letter-spacing: 1px;
+  font-weight: 75;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* a:hover{
+  font-weight: bold;
+  color: #fb7185;
+} */
+
+hr {
+  background-color: #fff;
+	border-top: 2px dashed #8c8b8b;
+  width: 50%;
+  margin: auto;
 }
+
+h1 {
+  font-size: 36pt;
+  font-weight: 350;
+  letter-spacing: 0px;
+  font-family: 'Inter', sans-serif;
+}
+
+h2 {
+  font-size: 24pt;
+  font-weight: 320;
+  letter-spacing: 0px;
+  font-family: 'Inter', sans-serif;
+  color: #f43f5e;
+}
+
+p {
+  font-family: 'Rubik', sans-serif;
+  font-size: 12pt;
+  font-weight: 75;
+  letter-spacing: 1px;
+  color: #737373;
+}
+
+#fotoAku {
+  height: 180px;
+  width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  /* box-shadow: 0 4px 8px 0 #fecdd3, 0 6px 20px 0 #fecdd3; */
+}
+
+.porto-card {
+  border-radius: 16px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 12pt;
+  font-weight: 300;
+}
+
+.self-desc {
+  font-family: 'Rubik', sans-serif;
+  font-size: 16pt;
+  font-weight: 75;
+  letter-spacing: 1px;
+  color: #737373;
+}
+
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+img.vert-move {
+    -webkit-animation: mover 1s infinite  alternate;
+    animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes mover {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url('../public/Rubik-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../public/Inter-Light.ttf');
+}
+
+
