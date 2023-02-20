@@ -14,6 +14,10 @@ module.exports = {
       fontFamily: "Inter",
       boxShadow: {
         'custom': '0 16px 50px -20px #fecdd3',
+        'timelinecard': '1px 1px 2px 2px #fecaca, 0 1px 2px -2px #fecaca'
+      },
+      fontSize: {
+        'xxs': '9px'
       }
     },
   },
