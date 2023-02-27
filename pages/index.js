@@ -38,8 +38,8 @@ export default function Home() {
                 </li>
 
                 <li>
-                  <Link href={`/#techstack`} className='cursor-pointer hover:text-rose-400 hover:font-semibold'>Other?</Link>
-                </li>4
+                  <Link href={`/#techstack`} className='cursor-pointer hover:text-rose-400 hover:font-semibold'>More?</Link>
+                </li>
               </ul>
 
               <div className='absolute top-5 right-16'>
