@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import {VscGithub} from "react-icons/vsc"
-import {RiMediumLine, RiLinkedinBoxLine} from "react-icons/ri"
-import {BsMoonStarsFill} from "react-icons/bs"
-import { useState } from 'react'
+import Head from 'next/head';
+import Link from 'next/link';
+import {VscGithub} from "react-icons/vsc";
+import {RiMediumLine, RiLinkedinBoxLine} from "react-icons/ri";
+import {BsMoonStarsFill} from "react-icons/bs";
+import {useState} from 'react';
 
 export default function Home() {
   const[darkMode, setDarkMode] = useState(false);
@@ -25,21 +25,21 @@ export default function Home() {
           <nav className={`inline-flex bg-inherit p-2 mt-0 fixed w-full z-10 top-0 dark:text-rose-100`}>
               <ul className='container mx-auto flex flex-wrap py-5 justify-center gap-24'>
                 <li>
-                  <Link href='/#aboutme' className='cursor-pointer hover:text-rose-400 hover:font-semibold'>About Me</Link>
+                  <Link href={`/#aboutme`} className='cursor-pointer hover:text-rose-400 hover:font-semibold'>About Me</Link>
                 </li>
                 {/* <li>
                   <Link href='/#learningjourney' className='cursor-pointer hover:text-rose-400 hover:font-semibold'>Learning Journey</Link>
                 </li> */}
                 {/* <li>
-                  <a href=''>Education</a>
+                  <Link href=''>Education</Link>
                 </li> */}
                 <li>
-                  <Link href='#experience' className='cursor-pointer hover:text-rose-400 hover:font-semibold'>Work Experience</Link>
+                  <Link href={`/#experience`} className='cursor-pointer hover:text-rose-400 hover:font-semibold'>Work Experience</Link>
                 </li>
 
                 <li>
-                  <Link href='#techstack' className='cursor-pointer hover:text-rose-400 hover:font-semibold'>Other?</Link>
-                </li>
+                  <Link href={`/#techstack`} className='cursor-pointer hover:text-rose-400 hover:font-semibold'>Other?</Link>
+                </li>4
               </ul>
 
               <div className='absolute top-5 right-16'>
@@ -68,13 +68,13 @@ export default function Home() {
             {/* Social Media Section */}
             <div className='mt-10'>
               <div className="text-center text-5xl flex justify-center gap-36 dark:text-rose-50">
-                <Link className='text-center text-5xl' target={'_blank'} href={'https://www.linkedin.com/in/novaguinea/'}>
+                <Link className='text-center text-5xl' target={'_blank'} href={`https://www.linkedin.com/in/novaguinea/`}>
                   <RiLinkedinBoxLine className='cursor-pointer hover:text-rose-400' />
                 </Link>
-                <Link className='text-center text-5xl' target={'_blank'} href={'https://medium.com/@novaguinea'}>
+                <Link className='text-center text-5xl' target={'_blank'} href={`https://medium.com/@novaguinea`}>
                   <RiMediumLine className='cursor-pointer hover:text-rose-400' />
                 </Link>
-                <Link className='text-center text-5xl' target={'_blank'} href={'https://github.com/novaguinea'}>
+                <Link className='text-center text-5xl' target={'_blank'} href={`https://github.com/novaguinea`}>
                   <VscGithub className='cursor-p ointer hover:text-rose-400'/>
                 </Link>
               </div>
