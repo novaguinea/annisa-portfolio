@@ -53,7 +53,7 @@ export default function Home() {
           <div id='aboutme' className="pt-28 pb-24 min-h-screen relative">
           {/* Greetings Section */}
             <div className='mb-5'>
-              <img id="fotoAku" className='shadow-custom vert-move rounded-full' src="https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/foto-square.jpg?alt=media&token=d6998b27-2188-4b05-b102-b14de6bc4c22"></img>
+              <img id="fotoAku" className='shadow-custom vert-move rounded-full' src="https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/pikachu%20copy.jpg?alt=media&token=aa99ff09-0ac6-46a9-9f4a-b010518d5bc0"></img>
             </div>
             <div className='px-60 text-center py-2'>
               <h1 className='mb-5 text-rose-400'> 
