@@ -39,6 +39,13 @@ const experiences = [
         rolename: "System Analyst",
         institute: "AdMedika (Telkom Group)",
         startdate: "Oct 2023",
+        enddate: "Jun 2024",
+    },
+        {
+        id: 7,
+        rolename: "Associate Product Manager",
+        institute: "OY! Indonesia",
+        startdate: "Jul 2024",
         enddate: "Present",
     },
 ];

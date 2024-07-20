@@ -4,10 +4,14 @@ import {VscGithub} from "react-icons/vsc";
 import {RiMediumLine, RiLinkedinBoxLine} from "react-icons/ri";
 import {BsMoonStarsFill} from "react-icons/bs";
 import {useState} from 'react';
+import experiences from './data/experience';
+
 
 export default function Home() {
   const[darkMode, setDarkMode] = useState(false);
   // const [isScrolled, setIsScrolled] = useState(false);
+
+  const expData = experiences.toReversed();
 
   return (
     <div className={`${darkMode ? "dark" : ""}`}>
@@ -27,12 +31,6 @@ export default function Home() {
                 <li>
                   <Link href={`/#aboutme`} className='cursor-pointer hover:text-rose-400 hover:font-semibold'>About Me</Link>
                 </li>
-                {/* <li>
-                  <Link href='/#learningjourney' className='cursor-pointer hover:text-rose-400 hover:font-semibold'>Learning Journey</Link>
-                </li> */}
-                {/* <li>
-                  <Link href=''>Education</Link>
-                </li> */}
                 <li>
                   <Link href={`/#experience`} className='cursor-pointer hover:text-rose-400 hover:font-semibold'>Work Experience</Link>
                 </li>
@@ -81,69 +79,7 @@ export default function Home() {
             </div>
           </div >
 
-          {/* <hr id='learningjourney' className='dark:bg-slate-800 justify-center'></hr>
-          
-          <div className='text-left px-36 pt-16 pb-24 gap-12 grid grid-cols-2'>
-
-            <div className='text-right mr-6'>
-              <h2>
-                Learning Journey
-              </h2>
-              <p className='dark:text-rose-50'>
-                Here are my potions after a lot of experiments!🧪
-              </p>
-            </div>
-
-
-            <div className='grid grid-cols-2 text-center text-gray-800 dark:text-rose-50 gap-4'>
-              <div className='cursor-pointer porto-card bg-rose-200 hover:bg-rose-400 hover:text-rose-50 dark:bg-slate-600 hover:dark:bg-rose-200 dark:hover:text-rose-500 p-10'>
-                <a href='twitter.com'>Product Management</a>
-              </div>
-              <div className='cursor-pointer porto-card bg-rose-200 hover:bg-rose-400 hover:text-rose-50 dark:bg-slate-600 hover:dark:bg-rose-200 dark:hover:text-rose-500 p-10'>
-                <a>Business Intelligence</a> 
-              </div>
-              <div className='cursor-pointer porto-card bg-rose-200 hover:bg-rose-400 hover:text-rose-50 dark:bg-slate-600 hover:dark:bg-rose-200 dark:hover:text-rose-500 p-10'>
-                <a>UI/UX Design</a> 
-              </div>
-              <div className='cursor-pointer porto-card bg-rose-200 hover:bg-rose-400 hover:text-rose-50 dark:bg-slate-600 hover:dark:bg-rose-200 dark:hover:text-rose-500 p-10'>
-                <a>Web Development</a>
-              </div>
-            </div>
-          </div> */}
-
           <hr className='dark:bg-slate-800 justify-center'></hr>
-
-          {/* <hr id='projects' className='dark:bg-slate-800 justify-center'></hr>
-
-          <div className='pt-16'>
-            
-            <h2 className='text-left px-24 mb-3'>Projects🏗️</h2>
-            <p className='px-24 mb-12'>
-              These are my projects built with my colleagues (actually they are my friends✌🏻)
-            </p>
-
-            <div className='grid gap-y-0 grid-cols-2 pb-24 text-center'>
-                <div className='project-box cursor-pointer porto-card bg-rose-200 hover:bg-rose-400 hover:text-rose-50 dark:bg-slate-600 hover:dark:bg-rose-200 dark:hover:text-rose-500'>
-                  <Link target={"_blank"} className='' href={'https://youtu.be/q-mwxW9WANI'}>
-                    <h3 className='font-bold mb-3'>Discharge Planning System</h3>
-                    <p>
-                      Discharge Planning system was built for hospitals in Bali to input patients’ medical record. This website is integrated with AyoPulih app to monitoring their patient after recover from COVID-19.
-                    </p>
-                    <p className='mt-12 font-xxs'>Creators: Annisa Novaguinea, Jovanka Samudra, Naufal Rachmandani</p>
-                  </Link>
-                </div>
-                
-                <div className='project-box cursor-pointer porto-card bg-rose-200 hover:bg-rose-400 hover:text-rose-50 dark:bg-slate-600 hover:dark:bg-rose-200 dark:hover:text-rose-500'>
-                  <Link target={"_blank"} href={'https://ormawa.upnvj.ac.id/'}>
-                    <h3 className='font-bold mb-3'>SIWA UPN Veteran Jakarta</h3> 
-                    <p>
-                      This project was built to help the administration of organizations in UPN Veteran Jakarta. SIWA serves digitalization of administration for less contact during COVID-19 and less paper use.
-                    </p>
-                  </Link>
-                </div>
-            </div>
-
-          </div> */}
 
           <hr id='experience' className='dark:bg-slate-800 justify-center'></hr>
 
@@ -157,15 +93,37 @@ export default function Home() {
                 {/* <!-- Vertical bar running through middle --> */}
                 <div class="hidden sm:block w-1 bg-rose-300 absolute h-full left-1/2 transform -translate-x-1/2"></div>
 
-                {/* <!-- Left section, set by justify-start and sm:pr-8 --> */}
+                {expData.map((item) => {
+                  if(item.id % 2 == 0) {
+                    return(
+                      <div class="mt-6 sm:mt-0 sm:mb-12">
+                        <div class="flex flex-col sm:flex-row items-center">
+                          <div class="flex justify-end w-full mx-auto items-center">
+                            <div class="w-full sm:w-1/2 sm:pl-8">
+                              <div class="p-4 bg-white dark:bg-slate-600 rounded">
+                                <h3 className='font-semibold tracking-wide text-rose-500 dark:text-rose-200'>{item.rolename} - {item.institute}</h3>
+                                {/* <br/> */}
+                                <p className='mt-2 list-disc text-xs font-light dark:text-rose-50'>{item.startdate} - {item.enddate}</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="rounded-full bg-rose-400 border-rose-50 dark:border-slate-800 border-4 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                          
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  } else {
+                    return (
                 <div class="mt-6 sm:mt-0 sm:mb-12">
                   <div class="flex flex-col sm:flex-row items-center">
                     <div class="flex justify-start w-full mx-auto items-center">
                       <div class="w-full sm:w-1/2 sm:pr-8">
                         <div class="p-4 bg-white dark:bg-slate-600 rounded">
-                          <h3 className='font-semibold tracking-wide text-rose-500 dark:text-rose-200'>System Analyst - AdMedika (Telkom Group)</h3>
+                          <h3 className='font-semibold tracking-wide text-rose-500 dark:text-rose-200'>{item.rolename} - {item.institute}</h3>
                           {/* <br/> */}
-                          <p className='mt-2 list-disc text-xs font-light dark:text-rose-50'>Oct 2023 - Present</p>
+                          <p className='mt-2 list-disc text-xs font-light dark:text-rose-50'>{item.startdate} - {item.enddate}</p>
                         </div>
                       </div>
                     </div>
@@ -174,105 +132,13 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-
-                {/* <!-- Right section, set by justify-end and sm:pl-8 --> */}
-                <div class="mt-6 sm:mt-0 sm:mb-12">
-                  <div class="flex flex-col sm:flex-row items-center">
-                    <div class="flex justify-end w-full mx-auto items-center">
-                      <div class="w-full sm:w-1/2 sm:pl-8">
-                        <div class="p-4 bg-white dark:bg-slate-600 rounded">
-                          <h3 className='font-semibold tracking-wide text-rose-500 dark:text-rose-200'>Product Management Intern - OY! Indonesia</h3>
-                          {/* <br/> */}
-                          <p className='mt-2 list-disc text-xs font-light dark:text-rose-50'>Apr 2023 - Sep 2023</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rounded-full bg-rose-400 border-rose-50 dark:border-slate-800 border-4 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                     
-                    </div>
-                  </div>
-                </div>
-
-                {/* <!-- Left section, set by justify-start and sm:pr-8 --> */}
-                <div class="mt-6 sm:mt-0 sm:mb-12">
-                  <div class="flex flex-col sm:flex-row items-center">
-                    <div class="flex justify-start w-full mx-auto items-center">
-                      <div class="w-full sm:w-1/2 sm:pr-8">
-                        <div class="p-4 bg-white dark:bg-slate-600 rounded">
-                          <h3 className='font-semibold tracking-wide text-rose-500 dark:text-rose-200'>Product Management Intern - Vidio</h3>
-                          {/* <br/> */}
-                          <p className='mt-2 list-disc text-xs font-light dark:text-rose-50'>Feb 2022 - Dec 2022</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rounded-full bg-rose-400 border-rose-50 dark:border-slate-800 border-4 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* <!-- Right section, set by justify-end and sm:pl-8 --> */}
-                <div class="mt-6 sm:mt-0 sm:mb-12">
-                  <div class="flex flex-col sm:flex-row items-center">
-                    <div class="flex justify-end w-full mx-auto items-center">
-                      <div class="w-full sm:w-1/2 sm:pl-8">
-                        <div class="p-4 bg-white dark:bg-slate-600 rounded">
-                          <h3 className='font-semibold tracking-wide text-rose-500 dark:text-rose-200'>Quality Assurance (Manual Tester) - Campaign.com</h3>
-                          {/* <br/> */}
-                          <p className='mt-2 list-disc text-xs font-light dark:text-rose-50'>Apr 2021 - Sep 2021</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rounded-full bg-rose-400 border-rose-50 dark:border-slate-800 border-4 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                     
-                    </div>
-                  </div>
-                </div>
-
-                {/* <!-- Left section, set by justify-start and sm:pr-8 --> */}
-                <div class="mt-6 sm:mt-0 sm:mb-12">
-                  <div class="flex flex-col sm:flex-row items-center">
-                    <div class="flex justify-start w-full mx-auto items-center">
-                      <div class="w-full sm:w-1/2 sm:pr-8">
-                        <div class="p-4 bg-white dark:bg-slate-600 rounded">
-                          <h3 className='font-semibold tracking-wide text-rose-500 dark:text-rose-200'>PIC and Quality Assurance - SIWA UPNVJ</h3>
-                          {/* <br/> */}
-                          <p className='mt-2 list-disc text-xs font-light dark:text-rose-50'>Apr 2021 - Dec 2021</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rounded-full bg-rose-400 border-rose-50 dark:border-slate-800 border-4 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* <!-- Right section, set by justify-end and sm:pl-8 --> */}
-                <div class="mt-6 sm:mt-0 sm:mb-12">
-                  <div class="flex flex-col sm:flex-row items-center">
-                    <div class="flex justify-end w-full mx-auto items-center">
-                      <div class="w-full sm:w-1/2 sm:pl-8">
-                        <div class="p-4 bg-white dark:bg-slate-600 rounded">
-                          <h3 className='font-semibold tracking-wide text-rose-500 dark:text-rose-200'>PIC and Front End Developer - AyoPulih</h3>
-                          {/* <br/> */}
-                          <p className='mt-2 list-disc text-xs font-light dark:text-rose-50'>Apr 2021 - Jun 2021</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="rounded-full bg-rose-400 border-rose-50 dark:border-slate-800 border-4 w-8 h-8 absolute left-1/2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 flex items-center justify-center">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                     
-                    </div>
-                  </div>
-                </div>
-
+                    )
+                  }
+                }
+                )}
               </div>
-
             </div>
           </div>
-
           <div id='techstack' className='pt-16 pb-24'>
             {/* tech stack */}
             
