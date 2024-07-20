@@ -3,12 +3,12 @@ import Link from 'next/link';
 import {VscGithub} from "react-icons/vsc";
 import {RiMediumLine, RiLinkedinBoxLine} from "react-icons/ri";
 import {BsMoonStarsFill} from "react-icons/bs";
-import {useState} from 'react';
 import experiences from './data/experience';
+import React from 'react';
 
 
 export default function Home() {
-  const[darkMode, setDarkMode] = useState(false);
+  const[darkMode, setDarkMode] = React.useState(false);
   // const [isScrolled, setIsScrolled] = useState(false);
 
   const expData = experiences.toReversed();
@@ -51,7 +51,7 @@ export default function Home() {
           <div id='aboutme' className="pt-28 pb-24 min-h-screen relative">
           {/* Greetings Section */}
             <div className='mb-5'>
-              <img id="fotoAku" className='shadow-custom vert-move rounded-full' src="https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/pikachu%20copy.jpg?alt=media&token=aa99ff09-0ac6-46a9-9f4a-b010518d5bc0"></img>
+              <img id="fotoAku" alt='pic' className='shadow-custom vert-move rounded-full' src="https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/pikachu%20copy.jpg?alt=media&token=aa99ff09-0ac6-46a9-9f4a-b010518d5bc0"></img>
             </div>
             <div className='px-60 text-center py-2'>
               <h1 className='mb-5 text-rose-400'> 
@@ -60,7 +60,7 @@ export default function Home() {
                 </b> 
               </h1>
               <p className='self-desc dark:text-rose-100'>
-                A fresh graduate information system student from UPN Veteran Jakarta. Passionate about creating best experience product for everyone!✨
+                Passionate about creating best experience product for everyone!✨
               </p>
             </div>
             {/* Social Media Section */}
@@ -96,7 +96,7 @@ export default function Home() {
                 {expData.map((item) => {
                   if(item.id % 2 == 0) {
                     return(
-                      <div class="mt-6 sm:mt-0 sm:mb-12">
+                      <div key = {item.id} class="mt-6 sm:mt-0 sm:mb-12">
                         <div class="flex flex-col sm:flex-row items-center">
                           <div class="flex justify-end w-full mx-auto items-center">
                             <div class="w-full sm:w-1/2 sm:pl-8">
@@ -116,7 +116,7 @@ export default function Home() {
                     )
                   } else {
                     return (
-                <div class="mt-6 sm:mt-0 sm:mb-12">
+                <div key = {item.id} class="mt-6 sm:mt-0 sm:mb-12">
                   <div class="flex flex-col sm:flex-row items-center">
                     <div class="flex justify-start w-full mx-auto items-center">
                       <div class="w-full sm:w-1/2 sm:pr-8">
