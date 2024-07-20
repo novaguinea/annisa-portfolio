@@ -4,6 +4,7 @@ import {VscGithub} from "react-icons/vsc";
 import {RiMediumLine, RiLinkedinBoxLine} from "react-icons/ri";
 import {BsMoonStarsFill} from "react-icons/bs";
 import experiences from './data/experience';
+import Image from 'next/image';
 import React from 'react';
 
 
@@ -51,7 +52,7 @@ export default function Home() {
           <div id='aboutme' className="pt-28 pb-24 min-h-screen relative">
           {/* Greetings Section */}
             <div className='mb-5'>
-              <img id="fotoAku" alt='pic' className='shadow-custom vert-move rounded-full' src="https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/pikachu%20copy.jpg?alt=media&token=aa99ff09-0ac6-46a9-9f4a-b010518d5bc0"></img>
+              <Image id="fotoAku" alt='pic' className='shadow-custom vert-move rounded-full' src="https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/pikachu%20copy.jpg?alt=media&token=aa99ff09-0ac6-46a9-9f4a-b010518d5bc0"/>
             </div>
             <div className='px-60 text-center py-2'>
               <h1 className='mb-5 text-rose-400'> 
@@ -145,14 +146,14 @@ export default function Home() {
             <h2 className='text-center pb-12'>My tech side💻</h2>
 
             <div className='grid gap-y-2 grid-cols-3 pb-24'>
-                <img className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/php.png?alt=media&token=fa6a458a-9dc8-431b-a824-b1c26e9597a7'></img>
-                <img className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/ci.png?alt=media&token=2d836f8d-cd89-4907-b876-bba5e38d734f'></img>
+                <Image className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/php.png?alt=media&token=fa6a458a-9dc8-431b-a824-b1c26e9597a7'/>
+                <Image className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/ci.png?alt=media&token=2d836f8d-cd89-4907-b876-bba5e38d734f'/>
                 {/* <img className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/figma.png?alt=media&token=74f5b04c-1142-4f1f-bc38-da92f2a80834'></img> */}
-                <img className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/nextjs.png?alt=media&token=671f9e3c-1209-4120-89aa-b81204e64c38'></img>
-                <img className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/mysql.png?alt=media&token=5a5ce1ef-d01d-45e4-8d5b-fcf44fb8e027'></img>
+                <Image className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/nextjs.png?alt=media&token=671f9e3c-1209-4120-89aa-b81204e64c38'/>
+                <Image className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/mysql.png?alt=media&token=5a5ce1ef-d01d-45e4-8d5b-fcf44fb8e027'/>
                 {/* <img className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/golang.png?alt=media&token=9cb1685d-64f8-4aae-abbf-7803e02804dc'></img> */}
-                <img className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/bootstrap-logo.svg?alt=media&token=166e326b-4059-44f1-9a73-a5cd62824434'></img>
-                <img className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/tailwindcss.png?alt=media&token=bdd45018-54f6-4dc7-bccf-f357fb3cf56f' alt='Tailwind CSS'></img>
+                <Image className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/bootstrap-logo.svg?alt=media&token=166e326b-4059-44f1-9a73-a5cd62824434'/>
+                <Image className='grid-techstack' src='https://firebasestorage.googleapis.com/v0/b/xxxxx-5413a.appspot.com/o/tailwindcss.png?alt=media&token=bdd45018-54f6-4dc7-bccf-f357fb3cf56f' alt='Tailwind CSS'/>
             </div>
 
           </div>
